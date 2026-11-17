@@ -92,7 +92,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .entry + .entry, .projects li + li { margin-top: 1.6rem; }
 
-.entry h3, .projects h3 { font-size: 1rem; margin-bottom: 0.35rem; }
+.entry h3, .projects h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
 
 .entry p, .projects p { font-size: 0.95rem; color: #23262B; margin-bottom: 0; }
 
