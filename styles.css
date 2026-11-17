@@ -1,0 +1,144 @@
+/* Atandra Bharati — resume site.
+   Model-card document: narrow label margin, wide reading column. */
+
+:root {
+  --paper:  #EDEEF0;
+  --ink:    #14161A;
+  --muted:  #5C6169;
+  --rule:   #C9CDD2;
+  --signal: #B23A2E;
+  --measure: 68ch;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 3.5rem 1.5rem 4rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1rem/1.6 "IBM Plex Sans", system-ui, sans-serif;
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+h1, h2, h3 { font-weight: 600; line-height: 1.15; margin: 0; }
+p { margin: 0 0 0.9rem; max-width: var(--measure); }
+a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover, a:focus-visible { color: var(--signal); }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+/* ── Masthead ─────────────────────────────────────────── */
+
+.masthead { margin-bottom: 2.5rem; }
+
+.masthead h1 {
+  font-size: clamp(2.4rem, 7vw, 3.5rem);
+  letter-spacing: -0.035em;
+  margin-bottom: 0.6rem;
+}
+
+.role {
+  font-size: 1.05rem;
+  color: #33383F;
+  max-width: 46ch;
+  margin-bottom: 0.8rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.note {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 54ch;
+  margin-bottom: 1.4rem;
+}
+
+/* ── Document rows ────────────────────────────────────── */
+
+.row {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 0 2.5rem;
+  padding: 1.8rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.margin h2 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  padding-top: 0.2rem;
+}
+
+.when {
+  font-size: 0.78rem;
+  color: var(--signal);
+  font-variant-numeric: tabular-nums;
+}
+
+.margin .when { margin: 0.3rem 0 0; }
+
+.lede { color: var(--muted); }
+
+.entry + .entry, .projects li + li { margin-top: 1.6rem; }
+
+.entry h3, .projects h3 { font-size: 1rem; margin-bottom: 0.35rem; }
+
+.entry p, .projects p { font-size: 0.95rem; color: #23262B; margin-bottom: 0; }
+
+/* Stack */
+
+.stack { margin: 0; }
+.stack dt { font-weight: 600; font-size: 0.95rem; margin-top: 1rem; }
+.stack dt:first-child { margin-top: 0; }
+.stack dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.92rem;
+  color: #23262B;
+  max-width: var(--measure);
+}
+
+/* Education */
+
+.school { margin-bottom: 0.15rem; }
+.where { color: var(--muted); font-size: 0.92rem; margin: 0; }
+
+/* ── Footer ───────────────────────────────────────────── */
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 2rem;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+footer p { margin: 0; }
+
+/* ── Mobile ───────────────────────────────────────────── */
+
+@media (max-width: 720px) {
+  body { padding: 2.5rem 1.25rem 3rem; }
+  .row { grid-template-columns: 1fr; gap: 0.7rem; padding: 1.5rem 0; }
+  .margin h2 { padding-top: 0; }
+  .margin .when { display: inline; margin-left: 0.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

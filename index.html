@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Atandra Bharati — Deep Learning Research Engineer</title>
+<meta name="description" content="Self-taught deep learning research engineer. From-scratch PyTorch implementations of frontier architectures: hybrid LLMs, latent diffusion, multimodal models, agentic systems." />
+<link rel="canonical" href="https://atandra2000.github.io/" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Atandra Bharati — Deep Learning Research Engineer" />
+<meta property="og:description" content="From-scratch PyTorch implementations of frontier AI architectures. 24 projects, measured on real hardware." />
+<meta property="og:url" content="https://atandra2000.github.io/" />
+<meta name="twitter:card" content="summary" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Atandra Bharati</h1>
+  <p class="role">Deep learning research engineer. I rebuild frontier AI architectures from scratch in PyTorch and measure what they cost to train.</p>
+  <p class="note">Independent work since 2022. 24 architectures rebuilt from scratch, including a 1.13B-parameter hybrid LLM pre-trained on 30B tokens.</p>
+  <ul class="links">
+    <li><a href="atandra_bharati_resume.pdf">Résumé (PDF)</a></li>
+    <li><a href="https://github.com/atandra2000">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/atandrabharati">LinkedIn</a></li>
+    <li><a href="mailto:atandrabharati@gmail.com">atandrabharati@gmail.com</a></li>
+  </ul>
+</header>
+
+<main>
+
+  <section class="row">
+    <div class="margin"><h2>Profile</h2></div>
+    <div class="content">
+      <p>Self-taught deep learning research engineer, B.Tech Civil Engineering 2024, with 24 from-scratch PyTorch projects spanning LLMs, latent diffusion, multimodal AI and agentic systems. The Civil degree supplied the mathematics, structures and optimisation; deep learning was learned in parallel.</p>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><h2>Stack</h2></div>
+    <div class="content">
+      <dl class="stack">
+        <dt>LLM</dt>
+        <dd>LLaMA-3 · DeepSeek-V3 · CyberLM · GPT-OSS · Mamba-3 · MLA · GQA · MoE · MTP · Gated Delta Net · complex64 SSD · sliding/full attention · learned sinks · YaRN · μP · WSD · NorMuon · CautiousAdamW</dd>
+        <dt>Generative vision</dt>
+        <dd>Stable Diffusion 1.x · latent diffusion · UNet · DDPM/DDIM · Min-SNR · CFG · EMA · VAE · GAN · DCGAN · PatchGAN · β-VAE · CycleGAN · AdaIN</dd>
+        <dt>Multimodal</dt>
+        <dd>ViT · SigLIP · PaliGemma-style fusion · HRNet pose · ST-GCN · CTR-GCN · NTU RGB+D 120</dd>
+        <dt>Core</dt>
+        <dd>Python 3.12 · PyTorch 2.x · torch.compile · SDPA · Flash-Attn 2 · BF16 · chunked CE · gradient checkpointing · DDP · safetensors · HuggingFace · Diffusers · W&amp;B · Comet</dd>
+        <dt>Agentic and infra</dt>
+        <dd>Multi-agent orchestration · provider-agnostic LLM routing · LangGraph · Triton · FSDP-2 · GRPO/DPO · vector and graph memory · Pydantic v2 · pytest · Ruff · A100 80GB · RTX 5090 · RTX 6000 Ada · RTX 3090 · 2× T4</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin">
+      <h2>Work</h2>
+      <p class="when">Nov 2022 to now</p>
+    </div>
+    <div class="content">
+      <p class="lede">Independent ML engineering. Every result below was produced on hardware I configured and monitored.</p>
+
+      <article class="entry">
+        <h3>LLaMA-3-Lite · memory engineering</h3>
+        <p>A 515M-parameter LLaMA-3-style transformer, cut from 92 GB to 20 GB peak training memory on a single A100 80GB. Gradient checkpointing, chunked cross-entropy taking logits from 50 GB to 0.3 GB, disk-backed token caching taking RAM from 112 GB to 1 MB, BF16, Flash-Attn 2, channels_last and fused AdamW.</p>
+      </article>
+
+      <article class="entry">
+        <h3>HyMo · hybrid LLM</h3>
+        <p>434M active and 1.13B stored parameters, fusing Gated Delta Net linear attention with Multi-Head Latent Attention in a 3:1 ratio, plus Asymmetric MoE and Multi-Token Prediction. Pre-trained from scratch on 30B tokens with a hand-written Triton GDN kernel and FSDP-2.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Stable Diffusion 1.x · from random init</h3>
+        <p>An 860M-parameter UNet trained on 2× RTX 5090 across a 7-phase curriculum, 1.3M+ images from LAION-Aesthetic through DiffusionDB, JourneyDB, VGGFace2 and COCO. Best loss 0.0947 at epoch 16; the epoch-42 checkpoint is on HuggingFace.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Autonomous ML Research Engineer · agentic platform</h3>
+        <p>15 phases, 20 agents and 61 typed tools that carry an arXiv paper through analysis, planning, code patches, training runs, statistical evaluation and a written report. Provider-agnostic LLM routing with self-repair.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Frontier reproductions</h3>
+        <p>CyberLM, a 4.55B / 1.34B-active sovereign cyber MoE with an auditable tool harness and GRPO. A faithful DeepSeek-V3 with the MLA absorption trick and AuxLossFreeGate MoE. GPT-OSS with alternating sliding and full attention plus YaRN at 128K. Mamba-3 with a complex64 SSD and 50% smaller state.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><h2>Projects</h2></div>
+    <div class="content">
+      <ul class="projects">
+        <li>
+          <h3><a href="https://github.com/atandra2000/HyMo">HyMo</a></h3>
+          <p>Hybrid linear and full attention LLM. 24 linear-attention layers, 8 MLA anchors, Asymmetric MoE on MLA blocks only, MTP heads. Custom Triton kernel with a fused selective scan at chunk size 64.</p>
+        </li>
+        <li>
+          <h3><a href="https://github.com/atandra2000/StableDiffusion">Stable Diffusion 1.x</a></h3>
+          <p>Diffusion from random init. DDPM and DDIM sampling, Min-SNR weighting, EMA, channels_last on Blackwell, DDP over NCCL.</p>
+        </li>
+        <li>
+          <h3><a href="https://github.com/atandra2000/AutonomousResearcher">Autonomous ML Research Engineer</a></h3>
+          <p>Paper to experiment, end to end. 250+ pydantic models, typed tool gateway, checkpointed runtime, evaluation harness.</p>
+        </li>
+        <li>
+          <h3><a href="https://github.com/atandra2000/DeepSeek-v3-Lite">DeepSeek-v3-Lite</a></h3>
+          <p>Roughly 412M parameters. MLA with absorption-trick inference, AuxLossFreeGate MoE, MTP-as-draft speculative decoding, and a companion 1,950-line MLA deep dive.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><h2>Education</h2></div>
+    <div class="content">
+      <p class="school"><strong>B.Tech, Civil Engineering</strong> <span class="when">2020 to 2024</span></p>
+      <p class="where">Heritage Institute of Technology, Kolkata</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Kolkata, India. Remote-friendly.</p>
+  <ul class="links">
+    <li><a href="mailto:atandrabharati@gmail.com">Email</a></li>
+    <li><a href="https://github.com/atandra2000">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/atandrabharati">LinkedIn</a></li>
+    <li><a href="atandra_bharati_resume.pdf">Résumé</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
